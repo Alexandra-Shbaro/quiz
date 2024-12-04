@@ -1,8 +1,7 @@
-/* General styles */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: linear-gradient(to right, #6a11cb, #4f14d8);
+  background: linear-gradient(to right, #8294e4, #a18dd1);
   color: white;
 }
 
@@ -14,7 +13,7 @@ button {
   padding: 10px 20px;
   margin: 5px;
   font-size: 1rem;
-  background-color: #4f14d8;
+  background-color: #564463;
   color: white;
   border: none;
   border-radius: 5px;
@@ -23,7 +22,7 @@ button {
 }
 
 button:hover {
-  background-color: #6a11cb;
+  background-color: #32273d;
 }
 
 input {
@@ -36,7 +35,6 @@ input {
   font-size: 1rem;
 }
 
-/* Navbar styles */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -59,7 +57,6 @@ input {
   margin-left: 10px;
 }
 
-/* Popup styles */
 .popup {
   position: fixed;
   top: 50%;
@@ -84,7 +81,7 @@ input {
 
 /* Quiz Card styles */
 .quiz-card {
-  padding: 1rem;
+  padding: 4rem;
   border: 1px solid white;
   background: rgba(0, 0, 0, 0.3);
   border-radius: 10px;
@@ -101,17 +98,16 @@ input {
 }
 
 .quiz-card h3 {
-  margin-bottom: 0.5rem;
+  margin-bottom: 2rem;
 }
 
-/* Quiz List styles */
 .quiz-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
 }
 
-/* Quiz Page styles */
 .quiz-page {
   padding: 20px;
   text-align: center;
@@ -144,4 +140,16 @@ input {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.quiz-wrapper{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding : 15rem 15rem;
+}
+
+.quiz-wrapper p{
+  text-align: center;
 }

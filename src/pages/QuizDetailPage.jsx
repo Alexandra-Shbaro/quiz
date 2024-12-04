@@ -34,7 +34,7 @@ const QuizDetailPage = () => {
   }
 
   return (
-    <div style={{ padding: '20px' }}>
+    <div className="quiz-wrapper">
       <h1>{quiz.name}</h1>
       <div>
         <p>{quiz.questions[currentQuestion].text}</p>
@@ -42,9 +42,7 @@ const QuizDetailPage = () => {
           {quiz.questions[currentQuestion].options.map((option, index) => (
             <button
               key={index}
-              onClick={() => handleAnswer(option.isCorrect)}
-              style={{ margin: '10px', padding: '10px' }}
-            >
+              onClick={() => handleAnswer(option.isCorrect)}>
               {option.text}
             </button>
           ))}
