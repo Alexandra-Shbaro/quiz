@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import { markQuizTaken } from '../redux/quizSlice';
 import { addPoints } from '../redux/userSlice';
 
+
 const QuizPage = ({ quiz, questions }) => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);

@@ -1,5 +1,6 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom'; // import useNavigate for routing
+import { useNavigate } from 'react-router-dom'; 
+
 
 const QuizCard = ({ quiz }) => {
   const navigate = useNavigate();

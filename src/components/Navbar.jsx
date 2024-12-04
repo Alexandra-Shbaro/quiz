@@ -4,6 +4,7 @@ import { logout } from '../redux/userSlice';
 import LoginPopup from './LoginPopup';
 import SignupPopup from './SignupPopup';
 
+
 const Navbar = () => {
   const dispatch = useDispatch();
   const { isLoggedIn, username, totalPoints } = useSelector((state) => state.user);

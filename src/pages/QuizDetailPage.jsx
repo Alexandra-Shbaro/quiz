@@ -1,12 +1,12 @@
-// src/components/QuizDetailPage.js
 import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { completeQuiz } from '../redux/quizSlice';
 import { addPoints } from '../redux/userSlice';
 
+
 const QuizDetailPage = () => {
-  const { id } = useParams(); // Get the quiz ID from the URL
+  const { id } = useParams(); 
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
