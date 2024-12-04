@@ -1,3 +1,7 @@
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { login } from '../redux/userSlice';
+
 const LoginPopup = ({ onClose }) => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
