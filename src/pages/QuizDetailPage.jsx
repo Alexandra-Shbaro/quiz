@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { completeQuiz } from '../redux/quizSlice';
-import { addPoints } from '../redux/userSlice'; // Use addPoints instead of updatePoints
+import { addPoints } from '../redux/userSlice'; 
 
 const QuizDetailPage = () => {
   const { id } = useParams();
@@ -22,7 +22,7 @@ const QuizDetailPage = () => {
       setCurrentQuestion(currentQuestion + 1);
     } else {
       dispatch(completeQuiz({ quizId: quiz.id, score }));
-      dispatch(addPoints(score)); // Use addPoints to update the points
+      dispatch(addPoints(score)); 
       alert(`Quiz completed! You scored ${score} points.`);
       navigate('/');
     }
