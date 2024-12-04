@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'; // import useNavigate for routing
 
 const QuizCard = ({ quiz }) => {
   const navigate = useNavigate();
@@ -21,4 +21,3 @@ const QuizCard = ({ quiz }) => {
 };
 
 export default QuizCard;
-
