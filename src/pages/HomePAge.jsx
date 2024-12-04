@@ -1,11 +1,10 @@
-// src/pages/HomePage.jsx
 import React from 'react';
 import { useSelector } from 'react-redux';
 import QuizCard from '../components/QuizCard';
 
 const HomePage = () => {
-  const quizzes = useSelector((state) => state.quiz.quizzes); // Get quizzes from Redux store
-  const user = useSelector((state) => state.user); // Get user state from Redux store
+  const quizzes = useSelector((state) => state.quiz.quizzes); 
+  const user = useSelector((state) => state.user); 
 
   return (
     <div style={{ padding: '20px', textAlign: 'center' }}>

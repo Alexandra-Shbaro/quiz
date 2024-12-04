@@ -1,12 +1,11 @@
-// src/pages/QuizDetailPage.jsx
 import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { completeQuiz } from '../redux/quizSlice';
-import { updatePoints } from '../redux/userSlice';
+import { addPoints } from '../redux/userSlice'; // Use addPoints instead of updatePoints
 
 const QuizDetailPage = () => {
-  const { id } = useParams(); // Get quiz ID from URL
+  const { id } = useParams();
   const dispatch = useDispatch();
   const navigate = useNavigate();
   
@@ -23,7 +22,7 @@ const QuizDetailPage = () => {
       setCurrentQuestion(currentQuestion + 1);
     } else {
       dispatch(completeQuiz({ quizId: quiz.id, score }));
-      dispatch(updatePoints(score));
+      dispatch(addPoints(score)); // Use addPoints to update the points
       alert(`Quiz completed! You scored ${score} points.`);
       navigate('/');
     }
@@ -37,14 +36,12 @@ const QuizDetailPage = () => {
     <div style={{ padding: '20px' }}>
       <h1>{quiz.name}</h1>
       <div>
-        <p>
-          {quiz.questions[currentQuestion].text}
-        </p>
+        <p>{quiz.questions[currentQuestion].text}</p>
         <div>
           {quiz.questions[currentQuestion].options.map((option, index) => (
-            <button 
-              key={index} 
-              onClick={() => handleAnswer(option.isCorrect)} 
+            <button
+              key={index}
+              onClick={() => handleAnswer(option.isCorrect)}
               style={{ margin: '10px', padding: '10px' }}
             >
               {option.text}

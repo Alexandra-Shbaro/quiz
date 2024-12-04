@@ -81,57 +81,57 @@ const initialState = {
       ],
     },
     {
-        id: 4,
-        name: 'Geography Quiz',
-        taken: false,
-        points: 0,
-        questions: [
-          {
-            text: 'Which of the following rivers is the longest in the world?',
-            options: [
-              { text: 'Nile', isCorrect: true },
-              { text: 'Amazon', isCorrect: false },
-              { text: 'Yangtze', isCorrect: false },
-              { text: 'Mississippi', isCorrect: false },
-            ],
-          },
-          {
-            text: 'Which country has the most time zones?',
-            options: [
-              { text: 'United States', isCorrect: false },
-              { text: 'France', isCorrect: true },
-              { text: 'China', isCorrect: false },
-              { text: 'Australia', isCorrect: false },
-            ],
-          },
-        ],
-      },
-      {
-        id: 5,
-        name: 'Programming Quiz',
-        taken: false,
-        points: 0,
-        questions: [
-          {
-            text: 'Which of the following data types is immutable in Python?',
-            options: [
-              { text: 'List', isCorrect: false},
-              { text: 'Set', isCorrect: false },
-              { text: 'Tuple', isCorrect: true },
-              { text: 'Dictionary', isCorrect: false },
-            ],
-          },
-          {
-            text: 'Which of the following is the correct way to define a function in JavaScript?',
-            options: [
-              { text: 'function myFunction[] {}', isCorrect: false },
-              { text: 'def myFunction() {}', isCorrect: false },
-              { text: 'myFunction() => {}', isCorrect: false },
-              { text: 'function myFunction() {}', isCorrect: true },
-            ],
-          },
-        ],
-      },
+      id: 4,
+      name: 'Geography Quiz',
+      taken: false,
+      points: 0,
+      questions: [
+        {
+          text: 'Which of the following rivers is the longest in the world?',
+          options: [
+            { text: 'Nile', isCorrect: true },
+            { text: 'Amazon', isCorrect: false },
+            { text: 'Yangtze', isCorrect: false },
+            { text: 'Mississippi', isCorrect: false },
+          ],
+        },
+        {
+          text: 'Which country has the most time zones?',
+          options: [
+            { text: 'United States', isCorrect: false },
+            { text: 'France', isCorrect: true },
+            { text: 'China', isCorrect: false },
+            { text: 'Australia', isCorrect: false },
+          ],
+        },
+      ],
+    },
+    {
+      id: 5,
+      name: 'Programming Quiz',
+      taken: false,
+      points: 0,
+      questions: [
+        {
+          text: 'Which of the following data types is immutable in Python?',
+          options: [
+            { text: 'List', isCorrect: false },
+            { text: 'Set', isCorrect: false },
+            { text: 'Tuple', isCorrect: true },
+            { text: 'Dictionary', isCorrect: false },
+          ],
+        },
+        {
+          text: 'Which of the following is the correct way to define a function in JavaScript?',
+          options: [
+            { text: 'function myFunction[] {}', isCorrect: false },
+            { text: 'def myFunction() {}', isCorrect: false },
+            { text: 'myFunction() => {}', isCorrect: false },
+            { text: 'function myFunction() {}', isCorrect: true },
+          ],
+        },
+      ],
+    },
   ],
 };
 
@@ -146,8 +146,15 @@ const quizSlice = createSlice({
         quiz.points = action.payload.points;
       }
     },
+    completeQuiz: (state, action) => {
+      const quiz = state.quizzes.find((q) => q.id === action.payload.id);
+      if (quiz) {
+        quiz.taken = true; 
+        quiz.points = action.payload.points || quiz.points; 
+      }
+    },
   },
 });
 
-export const { markQuizTaken } = quizSlice.actions;
+export const { markQuizTaken, completeQuiz } = quizSlice.actions;
 export default quizSlice.reducer;
