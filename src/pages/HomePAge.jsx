@@ -8,7 +8,6 @@ const HomePage = () => {
 
   const takenQuizzes = user?.takenQuizzes || [];
   const quizPoints = user?.quizPoints || {};
-  const isLoggedIn = user?.isLoggedIn || false;
 
   return (
     <div style={{ padding: '20px', textAlign: 'center' }}>
@@ -18,9 +17,6 @@ const HomePage = () => {
           <QuizCard
             key={quiz.id}
             quiz={quiz}
-            isTaken={takenQuizzes.includes(quiz.id)}
-            pointsEarned={quizPoints[quiz.id] || 0}
-            isLoggedIn={isLoggedIn}
           />
         ))}
       </div>
